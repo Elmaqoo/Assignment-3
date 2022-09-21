@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Bebas+NeueS&family=Fjalla+One&family=Varela+Round&display=swap');
 
 /*
-font-family: 'DM Sans', sans-serif;
-font-family: 'Poppins', sans-serif;
-font-family: 'Roboto', sans-serif;
+font-family: 'Arvo', serif;
+font-family: 'Bebas Neue', cursive;
+font-family: 'Fjalla One', sans-serif;
+font-family: 'Varela Round', sans-serif;
 */
 
 /* root styling */
@@ -15,12 +16,12 @@ font-family: 'Roboto', sans-serif;
     --primary-color: #73146a;
     --secondary-color: #e692df;
     --border : #9c79a4;
-    --hover : rgb(255, 246, 70);
+    --hover : rgb(171, 42, 42);
 
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Fjalla One', sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -79,12 +80,12 @@ a{
 }
 
 .text-title{
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Arvo', serif;
     font-weight: bold;
 }
 
 .secondary-title{
-    font-family: 'Poppins' , sans-serif;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .display-1{
@@ -97,6 +98,10 @@ a{
 
 .display-3{
     font-size: 14px;
+}
+
+.display-4{
+    font-size: 28px;
 }
 
 .text-center{
@@ -182,9 +187,9 @@ a{
 }
 
 .thumbnail{
-    width: 100%;
+    width:100%;
     height: 500px;
-    object-fit: cover;
+    object-fit:fill;
 }
 
 .rounded{
@@ -207,14 +212,14 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px;
+    padding: 0px;
 }
 
 .nav-brand{
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Arvo', serif;
     font-weight: bold;
     align-self: center;
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .collapse{
@@ -225,7 +230,8 @@ a{
     font-size: 18px;
     margin: 12px;
     color: var(--light);
-    font-family: 'Poppins', sans-serif;
+    background: #73146a;
+    font-family: 'Bebas Neue', cursive;
 }
 
 
@@ -342,18 +348,19 @@ a{
     padding: 1em;
     font-size: 18px;
     margin-right: 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Bebas Neue', cursive;
 }
 
 /* ----------- .article page ------- */
 
 /* ----------- sidebar page ------- */
 #sidebar .categories a{
-    padding: 1em 3em;
+    padding: 1em 2em;
     font-size: 18px;
     margin-bottom: 1em;
     background-color: var(--light);
-    border-radius:99px;
+    border-radius:50px;
+    width: 100%;
 }
 
 #sidebar .categories a:hover{
@@ -393,8 +400,8 @@ a{
 }
 
 .col-8{
-    flex: 0 0 70%;
-    max-width: 70%;
+    flex: 0 0 60%;
+    max: width 70%;
 }
 
 .col-4{
@@ -480,3 +487,5 @@ a{
     }
 
 }
+
+#more {display: none;}

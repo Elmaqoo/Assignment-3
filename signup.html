@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Fav Blog</title>
+
+    <!-- font awesome icons cdn -->
+    <script src="https://kit.fontawesome.com/d7f13ce4ed.js" crossorigin="anonymous"></script>
+
+    <!-- vue cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.39/vue.cjs.js"></script>
+
+    <!-- swiper slider css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.2/swiper-bundle.css" integrity="sha512-15OzXDrYC/wTgcjNDIx6+2LiAHCPnS9DiKQj/dhgdRMpdW+W4AoSjxism+gRaDobBaFN+UONPGic1ttu5mpWxg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- custom style.css file -->
+    <link rel="stylesheet" href="./src/assets/main.css">
+    </head>
+
+<style>
+/*Signup form */
+body {
+        --color-primary: #4c035f;
+        --color-primary-dark: #ec5be7;
+        --color-secondary: #252c6a;
+        --color-error: #cc3333;
+        --color-success: #4bb544;
+        --border-radius: 4px;
+
+    height: 100vh;
+}
+
+
+.form--hidden {
+    display: none;
+}
+
+.form > *:first-child {
+    margin-top: 0;
+}
+
+.form > *:last-child {
+    margin-bottom: 0;
+}
+
+.form__title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form__message {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form__message--success {
+    color: var(--color-success);
+}
+
+.form__message--error {
+    color: var(--color-error);
+}
+
+.form__input-group {
+    margin-bottom: 1rem;
+}
+
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    border: 1px solid #dddddd;
+    outline: none;
+    background: #eeeeee;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.form__input:focus {
+    border-color: var(--color-primary);
+    background: #ffffff;
+}
+
+.form__input--error {
+    color: var(--color-error);
+    border-color: var(--color-error);
+}
+
+.form__input-error-message {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-error);
+}
+
+.form__button {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+}
+
+.form__button:hover {
+    background: var(--color-primary-dark);
+}
+
+.form__button:active {
+    transform: scale(0.98);
+}
+
+.form__text {
+    text-align: center;
+}
+
+.form__link {
+    color: var(--color-secondary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form__link:hover {
+    text-decoration: underline;
+}
+    </style>
+<body>
+
+            
+    <!-- Header -->
+    <header id="header" class="shadow bg-primary-color">
+        <nav class="container navbar">
+            <a href="/index.html" class="nav-brand text-light">
+                 G' Day!
+             </a>
+  
+             <!-- toggle button -->
+             <button class="toggle-button">
+                 <span><i class="fa-solid fa-caret-down"></i></span>
+             </button>
+  
+             <!-- collapse on toggle button click -->
+             <div class="collapse">
+                 <ul class="navbar-nav ">
+                     <a href="./index.html" class="nav-link">Home</a>
+                     <a href="#" class="nav-link">Blog</a>
+                     <a href="#" class="nav-link">Authors</a>
+                     <a href="./signup.html" class="nav-link">Sign up/Sign In</a>
+                     <a href="./contactus.html" class="nav-link">Contact Us</a>
+                 </ul>
+             </div>
+  
+               <!-- collapse on toggle button click -->
+               <div class="collapse">
+                   <ul class="navbar-nav">
+                         <div class="search-box">
+                             <a href="#" class="nav-link"><i class="fa-brands fa-searchengin"></i></a>
+                         </div>
+                         <a href="#" class="nav-link"><i class="fab fa-facebook-f"></i></a>
+                         <a href="#" class="nav-link"><i class="fab fa-twitter"></i></a>
+                         <a href="#" class="nav-link"><i class="fab fa-instagram"></i></a>
+                   </ul>
+               </div>
+        </nav>
+    </header>
+  <!-- .Header -->
+
+  <div class="container">
+    <form class="form" id="login">
+        <h1 class="form__title">Login</h1>
+        <div class="form__message form__message--error"></div>
+        <div class="form__input-group">
+            <input type="text" class="form__input" autofocus placeholder="Username or email">
+            <div class="form__input-error-message"></div>
+        </div>
+        <div class="form__input-group">
+            <input type="password" class="form__input" autofocus placeholder="Password">
+            <div class="form__input-error-message"></div>
+        </div>
+        <button class="form__button" type="submit">Continue</button>
+        <p class="form__text">
+            <a href="#" class="form__link">Forgot your password?</a>
+        </p>
+        <p class="form__text">
+            <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+        </p>
+    </form>
+    <form class="form form--hidden" id="createAccount">
+        <h1 class="form__title">Create Account</h1>
+        <div class="form__message form__message--error"></div>
+        <div class="form__input-group">
+            <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username">
+            <div class="form__input-error-message"></div>
+        </div>
+        <div class="form__input-group">
+            <input type="text" class="form__input" autofocus placeholder="Email Address">
+            <div class="form__input-error-message"></div>
+        </div>
+        <div class="form__input-group">
+            <input type="password" class="form__input" autofocus placeholder="Password">
+            <div class="form__input-error-message"></div>
+        </div>
+        <div class="form__input-group">
+            <input type="password" class="form__input" autofocus placeholder="Confirm password">
+            <div class="form__input-error-message"></div>
+        </div>
+        <button class="form__button" type="submit">Continue</button>
+        <p class="form__text">
+            <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
+        </p>
+    </form>
+</div>
+
+<!-- footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-3">
+                <h2 class="footer-title secondary-title">About Us</h2>
+
+                <div class="secondary-title text-secondary">
+                     <p class="mt-2">
+                         Everyone has there own travel story and 
+                         we are here to let you show the world 
+                         your amazing journey.
+                     </p>
+                     
+                     <address>
+                         <i class="fas fa-map-marker-alt text-primary"></i> 
+                         221 Burwood Hwy, Burwood VIC 3125
+                     </address>
+
+                     <div class="phone">
+                         <i class="fas fa-mobile text-primary"></i> 
+                         +61 3 9244 6100
+                         <br> 
+                         8.30am–5pm
+                         <br> 
+                         Monday to Friday
+                     </div>
+
+                     <div class="email">
+                         <i class="fas fa-envelope text-primary"></i> 
+                         deakinmeihei@gmail.com
+                     </div>
+                     <div class="copyrights">
+                        <p class="text-center text-secondary display-2">
+                             © 2022 <a href="#" class="text-primary">MEI HEI CHAN</a> - Personal Blog Theme. All rights reserved.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+              
+    </div>
+</footer>
+<!-- .footer -->
+
+<!-- masonry libray for horizontal grid -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous"></script>
+
+<!-- swiper slider cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.2/swiper-bundle.min.js" integrity="sha512-dPYTaB+Ip4gAl9vo6U0jSmI8v1AZKjPKH367mfo7pR5gLf1IKpjm3bIXIwm+MmYWEf0eiBEWSBqE+MdKUx0jfg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- custom javascript main.js file -->
+<script src="./src/main.js"></script>
+    
+    
+  <script type="module" src="/src/main.js"></script>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
