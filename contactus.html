@@ -1,13 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <meta charset="UTF-8" />
+    <link rel="icon" href="src/assets/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Amazing Travel Blog</title>
+
+    <!-- font awesome icons cdn -->
     <script src="https://kit.fontawesome.com/d7f13ce4ed.js" crossorigin="anonymous"></script>
 
+    <!-- vue cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.39/vue.cjs.js"></script>
+
+    <!-- swiper slider css file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.2/swiper-bundle.css" integrity="sha512-15OzXDrYC/wTgcjNDIx6+2LiAHCPnS9DiKQj/dhgdRMpdW+W4AoSjxism+gRaDobBaFN+UONPGic1ttu5mpWxg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- custom style.css file -->
+    <link rel="stylesheet" href="src/assets/main.css">
+    
     <link rel="stylesheet" href="./src/assets/contact form/fonts/style.css">
 
     <link rel="stylesheet" href="./src/assets/contact form/wl.carousel.min.css">
@@ -17,11 +27,51 @@
     
     <!-- Style -->
     <link rel="stylesheet" href="./src/assets/contact form/style.css">
-    
 
-    <title>Contact Us</title>
   </head>
   <body>
+
+  <!-- Header -->
+  <header id="header" class="shadow bg-primary-color">
+    <nav class="container navbar">
+        <a href="/index.html" class="nav-brand text-light">
+         
+          <div id="app">
+              <h1>{{ msg }}</h1>
+          </div>
+         </a>
+
+         <!-- toggle button -->
+         <button class="toggle-button">
+             <span><i class="fa-solid fa-caret-down"></i></span>
+         </button>
+
+         <!-- collapse on toggle button click -->
+         <div class="collapse">
+             <ul class="navbar-nav ">
+                 <a href="./index.html" class="nav-link">Home</a>
+                 <a href="./blogs.html" class="nav-link">Blogs</a>
+                 <a href="./bloggers.html" class="nav-link">Bloggers</a>
+                 <a href="./signup.html" class="nav-link">Sign up/Sign In</a>
+                 <a href="./contactus.html" class="nav-link">Contact Us</a>
+             </ul>
+         </div>
+
+           <!-- collapse on toggle button click -->
+           <div class="collapse">
+               <ul class="navbar-nav">
+                     <div class="search-box">
+                         <a href="#" class="nav-link"><i class="fa-brands fa-searchengin"></i></a>
+                     </div>
+                     <a href="http://www.facebook.com" class="nav-link"><i class="fab fa-facebook-f"></i></a>
+                     <a href="http://www.twitter.com" class="nav-link"><i class="fab fa-twitter"></i></a>
+                     <a href="http://www.instagram.com" class="nav-link"><i class="fab fa-instagram"></i></a>
+               </ul>
+           </div>
+    </nav>
+</header>
+<!-- .Header -->
+
   
   <div class="content"> 
     
@@ -71,51 +121,70 @@
 
             </div>
             
-            <footer id="footer">
-              <div class="container">
-                  <div class="row mb-3">
-                      <div class="col-3">
-                               
-                          <div class="secondary-title text-secondary">
-                        
-                               
-                               <address>
-                                   <i class="fas fa-map-marker-alt text-primary"></i> 
-                                   221 Burwood Hwy, Burwood VIC 3125
-                               </address>
-        
-                               <div class="phone">
-                                   <i class="fas fa-mobile text-primary"></i> 
-                                   +61 3 9244 6100
-                                   <br> 
-                                   8.30am–5pm
-                                   <br> 
-                                   Monday to Friday
-                               </div>
-        
-                               <div class="email">
-                                   <i class="fas fa-envelope text-primary"></i> 
-                                   deakinmeihei@gmail.com
-                               </div>
-        
-                          </div>
-                      </div>
-                              
-                  <!-- copyrights  -->
-                  <div class="copyrights">
-                      <p class="text-center text-secondary display-2">
-                           © 2022 <a href="#" class="text-primary">MEI HEI CHAN</a> - Personal Blog Theme. All rights reserved.
-                      </p>
-                  </div>
-              </div>
-          </footer>
-    
-    
+            <!-- footer -->
+  <footer id="footer">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-3">
+                <h2 class="footer-title secondary-title">About Us</h2>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/main.js"></script>
+                <div class="secondary-title text-secondary">
+                     <p class="mt-2 ">
+                         Everyone has there own travel story and 
+                         we are here to let you show the world 
+                         your amazing journey.
+                     </p>
+                     
+                     <address>
+                         <i class="fas fa-map-marker-alt text-primary"></i> 
+                         221 Burwood Hwy, Burwood VIC 3125
+                     </address>
+
+                     <div class="phone">
+                         <i class="fas fa-mobile text-primary"></i> 
+                         +61 3 9244 6100
+                         <br> 
+                         8.30am–5pm
+                         <br> 
+                         Monday to Friday
+                     </div>
+
+                     <div class="email">
+                         <i class="fas fa-envelope text-primary"></i>
+                         <a href="mailto:deakinmeihei@gmail.com">
+                         deakinmeihei@gmail.com
+                          </a>
+                     </div>
+
+                </div>
+              </div>
+        </div>
+
+        <!-- copyrights  -->
+        <div class="copyrights">
+            <p class="text-center text-secondary display-2">
+                 © 2022 <a href="#" class="text-primary">MEI HEI CHAN</a> - Personal Blog Theme. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+<!-- .footer -->
+
+
+<!-- masonry libray for horizontal grid -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous"></script>
+
+<!-- swiper slider cdn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.2/swiper-bundle.min.js" integrity="sha512-dPYTaB+Ip4gAl9vo6U0jSmI8v1AZKjPKH367mfo7pR5gLf1IKpjm3bIXIwm+MmYWEf0eiBEWSBqE+MdKUx0jfg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- custom javascript main.js file -->
+<script type="module" src="/src/main.js"></script>
+
+<!--Form script-->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+  
   </body>
 </html>

@@ -85,9 +85,6 @@ function readmore() {
   window.readmore = readmore;
 
 
-function randomDate(start, end) {
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
-}
 
 //signin/signup
 function setFormMessage(formElement, type, message) {
